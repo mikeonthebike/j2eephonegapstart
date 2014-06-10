@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8" />
+<link rel="stylesheet"	href="css/main.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+<link rel="stylesheet"	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Vampiro+One' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet"	href="css/jqueryslider.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<title>Artist Data Base</title>
+</head>
+
+<body>
+
+	<div data-role="page">
+
+		<div data-role="panel" id="defaultpanel">
+
+			<h3>Default panel options</h3>
+			<p>
+				This panel has all the default options: positioned on the left with
+				the reveal display mode. The panel markup is <em>before</em> the
+				header, content and footer in the source order.
+			</p>
+
+			<p>To close, click off the panel, swipe left or right, hit the
+				Esc key, or use the button below:</p>
+			<a href="#demo-links" data-rel="close" data-role="button"
+				data-theme="c" data-icon="delete" data-inline="true">Close panel</a>
+
+		</div>
+		<!-- /panel -->
+
+			<form id="searchForm">
+				<input id="searchterm" type="text" name="q" placeholder="search term" />
+				<button type="submit">Search</button>
+			</form>
+			
+
+		<a href="#defaultpanel" data-role="button" data-inline="true"
+			data-icon="bars"><span class="artist">Artist Data Base</span></a>
+			
+		<!-- search form -->	
+				
+			
+
+		<div class="container fill">
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="active item">
+						<div class="fill"
+							style="background-image: url('//placehold.it/1024x700/449955/FFF');">
+							<div class="container"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="fill"
+							style="background-image: url('//placehold.it/1024x700');">
+							<div class="container"></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="fill"
+							style="background-image: url('//placehold.it/1024x700/CC1111/FFF');">
+							<div class="container"></div>
+						</div>
+					</div>
+				</div>
+				<div class="pull-center">
+					<a class="carousel-control left" href="#myCarousel"
+						data-slide="prev">‹</a> <a class="carousel-control right"
+						href="#myCarousel" data-slide="next">›</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- header -->
+		<!-- content -->
+		<!-- footer -->
+
+	</div>
+	<!-- page -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		
+	<script>
+	// jQuery.noConflict();
+	jQuery("document").ready(function(){
+		jQuery('.carousel').carousel();
+	});
+		
+		
+		</script>
+			
+
+</body>
+</html>

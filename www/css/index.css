@@ -88,7 +88,7 @@ h1 {
 }
 
 .event.listening {
-    background-color:#333333;
+    background-color:red;
     display:block;
 }
 
@@ -110,6 +110,6 @@ h1 {
 }
  
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    animation:fade 375ms infinite;
+    -webkit-animation:fade 375ms infinite;
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+<head>
+<meta charset="utf8" />
+<link rel="stylesheet"	href="css/lavish-bootstrap.css" />
+<link rel="stylesheet"	href="css/main.css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Vampiro+One' rel='stylesheet' type='text/css'>
+<title>Artist Data Base</title>
+</head>
+
+<body>
+
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://localhost:8080/j2eephonegapstart/"> <h2><span class="artist"> Artist Data Base </span></h2></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+			<form id="searchForm">
+				<input id="searchterm" type="text" name="q" placeholder="search term" />
+				<button type="submit">Search</button>
+			</form>
+			</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+    	
+    
+<div class="main container">
+
+		<div class="col-md-6">
+			<h4>Details<h4/>
+			<table id="artistDetails">
+			<script id="artistDetailsTemplate" type="text/template">
+					<tr><td>Artist:</td><td><%= artist %></td></tr>
+					<tr><td>Style:</td><td><%= style %></td>
+					<tr><td>Period:</td><td><%= period %></td></tr>
+			</script>
+			</table>
+			</div>
+			 
+			<div id="imageslide">
+			
+			<script id="imagestemplate" type="text/template"> 
+			<img src="<%= "images/fineartdatabase/" + folder + "/" + imageName %>" /> 
+			</script>
+			</div>
+			
+		</div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<!-- underscore is used to render the template with the object from the api -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<!-- backbone is a router that respects the back button -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+	<script src="js/imagestile.js"></script>
+</body>
+</html>
