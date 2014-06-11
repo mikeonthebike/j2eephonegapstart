@@ -39,6 +39,7 @@ body{
 	padding: 2px;
 	padding-bottom: 3em;
 	margin-left: .5em;
+	
 }
 
 .maincontainer {
@@ -76,6 +77,7 @@ body{
 	margin-top: .9em;
 	margin-left: .5em;
 	padding-top: .5em;
+	position-left: 1em;
 }
 .searchTerm{
 	float: center;
