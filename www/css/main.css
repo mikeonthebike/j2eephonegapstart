@@ -42,6 +42,18 @@ body{
 	
 }
 
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.fa-2x {
+    font-size: 2em;
+}
+
 .maincontainer {
 	margin:0 auto;
 	overflow:auto;
@@ -51,6 +63,17 @@ body{
 	margin-top:25px;
 	padding-top: 15px;
 }		
+
+#table-container {
+	opacity:0.9;
+	line-height: 2em;
+	position: absolute;
+	left: 5em;
+	top: 100px;
+	background: white;
+	padding-left: 1em;
+	
+}
 
 .artist{
 	font-family: 'Vampiro One', cursive;

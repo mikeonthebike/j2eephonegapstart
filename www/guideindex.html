@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="utf8" />
+<link rel="arstistdatabaseicon.ico"
+	href="images/fineartdatabase/arstistdatabaseicon.ico">
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet"
 	href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
@@ -13,10 +15,7 @@
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css"
 	rel="stylesheet">
 <link rel="stylesheet" href="css/jqueryslider.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script
-	src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <title>Artist Data Base</title>
 </head>
 
@@ -36,30 +35,33 @@
 					<li><a href="#" class="ui-btn-active">Style</a></li>
 				</ul>
 			</div>
-			
+
 			<!-- /navbar -->
 
 
-			<!--
-			<div data-role="button">
-				<ul>
-					<li><a href="news.html">Artist</a></li>
-					<li><a href="contact.html">Style</a></li>
-					<li><a href="about.html">Period</a></li>
-					<li><a href="about.html">Work</a></li>
-				</ul>
-			</div>
-			--->
+			<div id="artistList"></div>
+
+			<script id="artistListTemplate" type='text/template'>	
+		<p>
+			<a href="#images/<%= id %>"><%= artist %></a>
+		</p>
+		</script>
 
 			<a href="#demo-links" data-rel="close" data-role="button"
 				data-theme="c" data-icon="delete" data-inline="true">Close panel</a>
 
+
 		</div>
+
+
+
+
 		<!-- /panel -->
 
 		<form id="searchForm">
 			<input id="searchterm" type="text" name="q" placeholder="search term" />
-			<button type="submit">Search</button>
+			<i class="fa fa-search-plus fa-2x"></i>
+			<!-- <button type="submit">Search</button> -->
 		</form>
 
 
@@ -73,49 +75,73 @@
 		<div class="container fill">
 			<div id="myCarousel" class="carousel slide">
 				<div class="carousel-inner">
-					<div class="active item">
-						<div class="fill"
-							style="background-image: url('//placehold.it/1024x700/449955/FFF');">
-							<div class="container"></div>
+					<div id="imageslide"></div>
+
+					<script id="imagestemplate" type="text/template">
+						<div class="<%= sclass %>"> <div class="fill"
+	style="background-image: url('<%= "images/fineartdatabase/" + folder + "/" + imageName %>" />')">
+			<div class="container"></div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="fill"
-							style="background-image: url('//placehold.it/1024x700');">
-							<div class="container"></div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="fill"
-							style="background-image: url('//placehold.it/1024x700/CC1111/FFF');">
-							<div class="container"></div>
-						</div>
-					</div>
-				</div>
-				<div class="pull-center">
-					<a class="carousel-control left" href="#myCarousel"
-						data-slide="prev">‹</a> <a class="carousel-control right"
-						href="#myCarousel" data-slide="next">›</a>
-				</div>
-			</div>
-		</div>
-
-		<!-- header -->
-		<!-- content -->
-		<!-- footer -->
-
-	</div>
-	<!-- page -->
-	<script
-		src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-	<script>
-		// jQuery.noConflict();
-		jQuery("document").ready(function() {
-			jQuery('.carousel').carousel();
-		});
 	</script>
 
+					<!--  class was item, active -->
 
+					<div class="pull-center">
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+					</div>
+					
+				
+				</div>
+			</div>
+			
+			<div id=table-container>	
+				<table id="artistDetails">
+						<script id="artistDetailsTemplate" type="text/template">
+					<tr><td>Artist:</td><td><%= artist %></td></tr>
+					<tr><td>Style:</td><td><%= style %></td>
+					<tr><td>Period:</td><td><%= period %></td></tr>
+						</script>
+					</table>	
+				</div>
+				
+
+
+
+			<!-- header -->
+			<!-- content -->
+			<!-- footer -->
+
+		</div>
+		<!-- page -->
+		<script
+			src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<script>
+			// jQuery.noConflict();
+			jQuery("document").ready(function() {
+				jQuery('.carousel').carousel();
+			});
+		</script>
+
+		<script>
+			jQuery("document").bind("mobileinit", function() {
+				jQuery.mobile.ajaxEnabled = false;
+				jQuery.mobile.linkBindingEnabled = false;
+				jQuery.mobile.hashListeningEnabled = false;
+				jQuery.mobile.pushStateEnabled = false;
+			});
+		</script>
+		<script
+			src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+		<!-- underscore is used to render the template with the object from the api -->
+		<script
+			src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+		<!-- backbone is a router that respects the back button -->
+		<script
+			src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+		<script src="js/panel_images.js"></script>
 </body>
 </html>
