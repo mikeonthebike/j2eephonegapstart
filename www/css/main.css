@@ -72,7 +72,8 @@ body{
 	top: 100px;
 	background: white;
 	padding-left: 1em;
-	
+	border:.025em solid;
+	border-radius:10px;	
 }
 
 .artist{
